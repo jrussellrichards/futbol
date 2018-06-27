@@ -1,0 +1,18 @@
+#Se creó inicio de sesión
+#Se creó cierre de sesión
+#Se puede reservar cancha
+#Se corrigió lo siguiente en base de datos: Tipos de datos malos en reserva, se eliminó horario y posee(editar mer), se actualizó reserva según nuevas fk
+#MER debería corregirse, tiene muchos detalles que se pueden corregir
+#Se hizo Navbar de acuerdo al usuario logueado
+#Se creó vista de horarios
+#Si visita página reserva sin estar logueado, el sistema no deja ingresar. 
+#Si visita página reserva sin estar logueado, el sistema genera un link al loguin. 
+#Mensaje de bienvenida según nombre del usuario aun cuando el loguin es el rut.
+#Se eliminó fecha de horario, ya que se asumirá que los precios por horario son independientes de la fecha y en caso de serlo se hará un update.
+#se asumirá ahora que por cada reserva hay máximo una cancha y un horario, si un usuario desea añadir más reservas puede hacerlo (cambiar a 1,n usuarios reserva)
+#se creó tabla usuarios_reserva que guarda todas las reservas de de cada usuario
+#Cada vez que se ingresa una reserva, el usuario podrá ver esta en su panel de control
+#Se creó panel de control
+#El sistema no deja registrar una cancha en el caso de que ya haya registrada una anteriormente en esa cancha y en ese horario(no lo hace mediante pk si no a través de una función de verificación), en el caso de que no se pueda da la opción de ver horarios.
+
+
