@@ -92,7 +92,7 @@
     $hoy = date("y-m-d"); 
 
 
-    $consulta_verificacion = "SELECT * FROM reserva where horario='$hora' and cancha='$cancha'";
+    $consulta_verificacion = "SELECT * FROM reserva where horario='$hora' and cancha='$cancha' and fecha_pago_saldo='$fecha'";
     echo $consulta_verificacion;
     $resultado_verificacion = mysqli_query($conn,$consulta_verificacion);
     $row_cnt = $resultado_verificacion->num_rows;
@@ -122,8 +122,8 @@ if ($conn->query($insert_reserva) === TRUE) {
 
 
     echo "New record created successfully";
-    $insert_user_reserva="insert into user_reservas values('$rut','$id_reserva')";
-    $conn->query($insert_user_reserva); 
+    // $insert_user_reserva="insert into user_reservas values('$rut','$id_reserva')";
+    // $conn->query($insert_user_reserva); 
 
 
 } }else { ?>  <span><strong>Error: </strong> Es imposible agendar esa cancha en ese horario <a href="consulta_cancha.php" class="alert-link">Ver otros horarios</a>.</span><?php 

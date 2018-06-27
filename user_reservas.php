@@ -83,7 +83,8 @@ $nombre=$row["nombre"];
          
 
 
-              $consulta = "SELECT * FROM user_reservas,usuario,reserva where user_reservas.rut=usuario.rut and user_reservas.reserva= reserva.id_reserva";
+              $consulta = "SELECT * FROM usuario,reserva where reserva.rut=usuario.rut and usuario.rut='$rut'";
+              echo $consulta;
               $resultados = mysqli_query($conn,$consulta);
       ?>
 
@@ -115,7 +116,7 @@ $nombre=$row["nombre"];
                echo "<td>" . $consulta["total_a_pagar"] . "</td>";              
                echo "<td>" . $consulta["abono_pago"] ."</td>";
                echo "<td>" . $consulta["saldo_pendiente"] ."</td>";
-               
+
 
              echo "</tr>";
     }

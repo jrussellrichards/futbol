@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>  
-<?php session_start();  ?>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<?php session_start();   ?>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body background="chillan.html">
-<meta charset="uttf"/>
+
 
 <?php  include_once("./header.php"); ?>
 
-</form>
+
 
 
 <form class="form-horizontal" action="sesion.php" method="POST" style="margin:0 auto">
@@ -34,11 +34,10 @@
     <div class="">
   <center><button name="btn_sesion" type="submit" class="btn btn-primary">Iniciar sesión</button></center>
     </div>
-  </div>
-  
+  <  
 	  
 </form>
-
+</body>
 <?php
 
 
@@ -125,4 +124,3 @@ if ($result->num_rows > 0) {
 }
  ?>
 
-</body>

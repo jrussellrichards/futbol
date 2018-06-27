@@ -26,9 +26,7 @@
 <li class="nav-item">
         <a class="nav-link" href="reserva.php">Reserva</a>
       </li>  
-<li class="nav-item">
-        <a class="nav-link" href="profile.php">Perfil</a>
-      </li> 
+
 <li class="nav-item">
         <a class="nav-link" href="consulta_cancha.php">Canchas</a>
       </li>         
