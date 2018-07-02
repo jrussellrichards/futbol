@@ -84,7 +84,7 @@ $nombre=$row["nombre"];
 
 
               $consulta = "SELECT * FROM usuario,reserva where reserva.rut=usuario.rut and usuario.rut='$rut'";
-              echo $consulta;
+              // echo $consulta;
               $resultados = mysqli_query($conn,$consulta);
       ?>
 
@@ -98,6 +98,7 @@ $nombre=$row["nombre"];
           <th>Valor</th>
           <th>Abono</th>
           <th>Total a pagar</th>
+          <th>Cancelar reserva</th>
 
           
         </tr>  
@@ -116,10 +117,25 @@ $nombre=$row["nombre"];
                echo "<td>" . $consulta["total_a_pagar"] . "</td>";              
                echo "<td>" . $consulta["abono_pago"] ."</td>";
                echo "<td>" . $consulta["saldo_pendiente"] ."</td>";
-
-
-             echo "</tr>";
+            echo '<td>';
+            echo '<form action="user_reservas.php" method="POST"><button name="reservita"';
+            echo " value=".$consulta["id_reserva"].' type="submit" class="btn btn-default">Cancelar</button></form></td>';
+            echo "</tr>";
     }
+
+    if(isset($_POST['reservita'])){
+      $reservita = $_POST['reservita'];
+      echo "eliminada reserva '$reservita'";
+
+      $consulta_delete = "delete FROM reserva where id_reserva='$reservita'";
+              // echo $consulta;
+      $resultados = mysqli_query($conn,$consulta_delete);
+      header("Location: user_reservas.php");
+      echo "eliminada reserva '$reservita'";
+
+      }
+
+    
   
 ?>
 

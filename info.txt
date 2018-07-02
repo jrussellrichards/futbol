@@ -16,3 +16,16 @@
 #El sistema no deja registrar una cancha en el caso de que ya haya registrada una anteriormente en esa cancha y en ese horario(no lo hace mediante pk si no a través de una función de verificación), en el caso de que no se pueda da la opción de ver horarios.
 
 
+
+
+
+
+
+
+DATOS!
+
+#Según como lo entregaron ustedes: A veces el menú de navegación desaparecere, esto es por la resolución y se debe aumentar para que sea vea, no me dio el tiempo de arreglarlo
+#Cuando se falla al ingresar un horario o cuando se agrega uno se ven mensajes que dicen si se hizo o no correctamente. Hagan eso más bonito añadiendo un alert (buscar bootstrap alert) o algo que les guste
+
+
+

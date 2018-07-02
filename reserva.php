@@ -93,7 +93,7 @@
 
 
     $consulta_verificacion = "SELECT * FROM reserva where horario='$hora' and cancha='$cancha' and fecha_pago_saldo='$fecha'";
-    echo $consulta_verificacion;
+    // echo $consulta_verificacion;
     $resultado_verificacion = mysqli_query($conn,$consulta_verificacion);
     $row_cnt = $resultado_verificacion->num_rows;
 
@@ -101,7 +101,14 @@
     $insert_reserva = "INSERT INTO reserva(total_a_pagar, saldo_pendiente, fecha_pago_saldo,fecha_abono,rut,abono_pago,horario,cancha)
             VALUES( '$total_a_pagar', '$diferencia', '$fecha','$hoy','$rut','$abono','$hora',$cancha)";
 
- if($row_cnt<1){
+    // echo $insert_reserva;        
+    $consuta_abono= "SELECT * FROM horario where hora='$hora'";
+    $resultado_consulta_abono = mysqli_query($conn,$consuta_abono);
+    $resultado_consulta_abono=mysqli_fetch_array($resultado_consulta_abono);
+    $abono_minimo=$resultado_consulta_abono[1];
+    
+
+ if($row_cnt<1 and $abono_minimo<$abono){
 if ($conn->query($insert_reserva) === TRUE) {
 
 
@@ -121,12 +128,12 @@ if ($conn->query($insert_reserva) === TRUE) {
 
 
 
-    echo "New record created successfully";
+    echo "Reserva registrada";
     // $insert_user_reserva="insert into user_reservas values('$rut','$id_reserva')";
     // $conn->query($insert_user_reserva); 
 
 
-} }else { ?>  <span><strong>Error: </strong> Es imposible agendar esa cancha en ese horario <a href="consulta_cancha.php" class="alert-link">Ver otros horarios</a>.</span><?php 
+} }else { ?>  <span><strong>Error: </strong> Es imposible agendar esa cancha en ese horario. Revisa que tu pago mínimo sea mayor que el solicitado o que estás ingresando un horario válido <a href="consulta_cancha.php" class="alert-link">Más información de nuestras canchas acá</a>.</span><?php 
           
  
 }
